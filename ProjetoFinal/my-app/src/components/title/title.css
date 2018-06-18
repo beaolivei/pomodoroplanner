@@ -1,3 +1,8 @@
+*{
+    margin-top: 0;
+    margin-bottom: 10px;
+
+}
 .textContent {
     font-family: 'Montserrat', sans-serif
 }

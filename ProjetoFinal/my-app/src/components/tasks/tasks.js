@@ -1,7 +1,7 @@
 import React from 'react'
-import FaClose from 'react-icons/lib/fa/close'
+import {ic_close} from 'react-icons-kit/md/ic_close'
 import Button from '../button/button'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect, Link } from 'react-router-dom'
 import Timer from '../../pages/timer/timer.js'
 import './tasks.css'
 
@@ -9,7 +9,6 @@ import './tasks.css'
 class Tasks extends React.Component {
     constructor (props){
         super (props);
-        console.log('props no construtor', this.props)
         this.state = {
         title: this.props.title ||  '',
         text: this.props.text || '',
@@ -18,13 +17,10 @@ class Tasks extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-       
-       
-    
+ 
     handleSubmit = e => {
-        if (!this.state.id) {
+        console.log ('estou funcionando')
         e.preventDefault()
-
         const id = `7f80f378-9c93-4b9c-bf54-8fea1f${Math.floor((Math.random() * 100) + 1)}d42`
 
         const task = {
@@ -34,14 +30,37 @@ class Tasks extends React.Component {
         }
 
         this.setState ({  id: id })
-        console.log('props', this.props)
+    
+
         this.props.addTask(task)
-    } else {
-          <Route exact path="/timer" render= {Timer} />
+    
+        this.setState ({
+            title:'', 
+            text: '',
+            id: '',
+            editing: false
+        })
+    
+
     }
 
-        
-    
+    handleRemoveButtonOnClick = e =>{
+        e.stopPropagation()
+
+        const id = this.state.id
+
+        this.props.removeButton(id)
+
+        this.setState({
+            editing: false
+        })
+}
+    editButtonClick = e => {
+        e.stopPropagation()
+        this.setState({
+         title: '',
+         text: '',
+       });
 
     }
     handleChange = e => {
@@ -56,12 +75,25 @@ class Tasks extends React.Component {
     render () {
         return (
             <form className='formStyle' onSubmit={this.handleSubmit}>
-                    <button className='closeButtonStyle'>
-                        <FaClose />
-                    </button>
+                    {this.state.id && <button className='closeButtonStyle'
+                    type="button"
+                    onClick={this.handleRemoveButtonOnClick}>
+                        <ic_close />
+                    </button>}
                     <input className='inputStyle' name = 'title' value = {this.state.title} placeholder ='Add Title ...' onChange ={this.handleChange}/>
                     <textarea className='textAreaStyle' name='text' value = {this.state.text} placeholder ='Add some extra info, maybe?' onChange = {this.handleChange}/>
-                    <Button marginLeft='270px' buttonText = {!this.state.id ?'Add Task' : "Start"}/>
+                    <div className='buttonS'>
+                        {!this.state.id ?
+                        <Button type = 'submit'  backgroundColor='rgb(110, 197, 76)' buttonText = 'Add Task' /> :                    
+                        <Link to ="/timer" >
+                            <Button type = 'submit' backgroundColor='rgb(110, 197, 76)' margin='5px' buttonText = {!this.state.id ?'Add Task' : "Start"} 
+                
+                        />
+                        </Link>}
+                        {this.state.id && <Button  type='button' backgroundColor='rgb(122, 118, 110)' buttonText= 'Edit Task' onClick = {this.editButtonClick}/>
+                        }
+                    </div>
+
            </form>
         )
     }

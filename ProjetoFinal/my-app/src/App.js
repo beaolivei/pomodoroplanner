@@ -18,7 +18,7 @@ class App extends Component {
            <Route path="/tasklist" component={TaskList} />
            <Route path="/timer" component={Timer} />
 
-           </Switch>
+        </Switch>
       </div>
     );
   }
