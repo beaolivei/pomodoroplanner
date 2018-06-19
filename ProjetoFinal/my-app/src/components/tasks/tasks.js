@@ -2,7 +2,7 @@ import React from 'react'
 import {ic_close} from 'react-icons-kit/md/ic_close'
 import Button from '../button/button'
 import { Route, Switch, Redirect, Link } from 'react-router-dom'
-import Timer from '../../pages/timer/timer.js'
+import TimerPage from '../../pages/timer_page/timer_page'
 import './tasks.css'
 
 
@@ -13,6 +13,7 @@ class Tasks extends React.Component {
         title: this.props.title ||  '',
         text: this.props.text || '',
         id: this.props.id || '',
+        key:this.props.key || '',
         editing: this.props.editing || false
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -72,9 +73,16 @@ class Tasks extends React.Component {
             
         })
     }
+    createKeyonLocalStorage = e => {
+        e.stopPropagation() 
+        const id = this.state.id
+        localStorage.setItem('key', JSON.stringify(id))
+
+
+    }
     render () {
         return (
-            <form className='formStyle' onSubmit={this.handleSubmit}>
+            <form className='formStyle' id='{this.addId}' onSubmit={this.handleSubmit}>
                     {this.state.id && <button className='closeButtonStyle'
                     type="button"
                     onClick={this.handleRemoveButtonOnClick}>
@@ -85,8 +93,9 @@ class Tasks extends React.Component {
                     <div className='buttonS'>
                         {!this.state.id ?
                         <Button type = 'submit'  backgroundColor='rgb(110, 197, 76)' buttonText = 'Add Task' /> :                    
-                        <Link to ="/timer" >
-                            <Button type = 'submit' backgroundColor='rgb(110, 197, 76)' margin='5px' buttonText = {!this.state.id ?'Add Task' : "Start"} 
+                        <Link to ="/timer" onClick={this.createKeyonLocalStorage} >
+                            <Button type = 'submit' backgroundColor='rgb(110, 197, 76)' margin='5px' buttonText = "Start" 
+                            
                 
                         />
                         </Link>}
@@ -99,4 +108,5 @@ class Tasks extends React.Component {
     }
 
 }
+
 export default Tasks

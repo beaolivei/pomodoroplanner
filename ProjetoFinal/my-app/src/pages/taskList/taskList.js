@@ -7,8 +7,9 @@ import './taskList.css'
 class TaskList extends React.Component {
         state = {
         tasksList: JSON.parse(localStorage.getItem('tasks')) || [],
-        carregando: true
+        carregando: true 
     }
+
     addNewTask = (task) => {
         const tasks = JSON.parse(localStorage.getItem('tasks')) || []
         tasks.push(task)
@@ -18,6 +19,7 @@ class TaskList extends React.Component {
         })
     
     }
+
 
     editTaskList = (alteredTask) => {
        this.setState(prevState => {
@@ -33,11 +35,6 @@ class TaskList extends React.Component {
                 )
             }
         })
-    .catch(error => {
-        if (error.response) {
-            alert(error.response.data.erro)
-        }
-    })
     }
 
     removeTask = (idRemovedTask) => {
@@ -45,6 +42,7 @@ class TaskList extends React.Component {
        const filteredTask = tasks.filter (
            task => task.id !== idRemovedTask
        )
+       console.log (tasks)
        localStorage.setItem('tasks',JSON.stringify(filteredTask))
        this.setState(prevState => {
             return {
@@ -53,6 +51,19 @@ class TaskList extends React.Component {
                 )
                     }
                 })
+     }
+     filterTaskforTimer = (idSelectedTask) => {
+        const tasks = JSON.parse(localStorage.getItem('tasks'))
+        const selectedTask = tasks.filter (
+            (id) => {
+                return (
+                    id === idSelectedTask
+                )
+            }
+        )
+        localStorage.setItem('tasks',JSON.stringify(selectedTask))
+        console.log('novo Local Storage', localStorage.getItem('tasks'))
+
      }
     render() {
         return (
@@ -69,7 +80,7 @@ class TaskList extends React.Component {
                                 id={task.id}
                                 addTask={this.addNewTask}
                                 removeButton={this.removeTask}
-
+                                editLocalStorage = {this.filterTaskforTimer}
                             />)
                 )}
             </div>

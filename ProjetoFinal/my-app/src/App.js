@@ -4,7 +4,7 @@ import Button from './components/button/button'
 import Title from './components/title/title'
 import Tasks from './components/tasks/tasks'
 import TaskList from './pages/taskList/taskList.js'
-import Timer from './pages/timer/timer.js'
+import TimerPage from './pages/timer_page/timer_page'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import './App.css';
 
@@ -16,7 +16,7 @@ class App extends Component {
         <Switch>
            <Route exact path = '/' component={TaskList}/>
            <Route path="/tasklist" component={TaskList} />
-           <Route path="/timer" component={Timer} />
+           <Route path="/timer" component={TimerPage} />
 
         </Switch>
       </div>
