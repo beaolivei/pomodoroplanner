@@ -1,0 +1,13 @@
+.showTaskForm {
+    background-color: rgb(110, 197, 76);
+    width: 70%;
+    margin-left: 3em;
+    height: 107px;
+    border-radius: 9px;
+    border-style: solid;
+
+}
+.paragraphStyle {
+    border-bottom: 2px solid wheat;
+    padding: 0.5em;
+}

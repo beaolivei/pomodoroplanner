@@ -73,13 +73,20 @@ class Tasks extends React.Component {
             
         })
     }
-    createKeyonLocalStorage = e => {
-        e.stopPropagation() 
-        const id = this.state.id
-        localStorage.setItem('key', JSON.stringify(id))
+    // createKeyonLocalStorage = e => {
+    //     e.stopPropagation() 
+    //     const id = this.state.id
+    //     localStorage.setItem('key', JSON.stringify(id))
 
 
-    }
+    // }
+    addTitleandTexttoLocalStorage = (e) => {
+    e.stopPropagation()
+    const title = this.state.title
+    localStorage.setItem ('title', JSON.stringify(title))
+    const text = this.state.text
+    localStorage.setItem ('text', JSON.stringify(text))
+}
     render () {
         return (
             <form className='formStyle' id='{this.addId}' onSubmit={this.handleSubmit}>
@@ -92,9 +99,9 @@ class Tasks extends React.Component {
                     <textarea className='textAreaStyle' name='text' value = {this.state.text} placeholder ='Add some extra info, maybe?' onChange = {this.handleChange}/>
                     <div className='buttonS'>
                         {!this.state.id ?
-                        <Button type = 'submit'  backgroundColor='rgb(110, 197, 76)' buttonText = 'Add Task' /> :                    
-                        <Link to ="/timer" onClick={this.createKeyonLocalStorage} >
-                            <Button type = 'submit' backgroundColor='rgb(110, 197, 76)' margin='5px' buttonText = "Start" 
+                        <Button type = 'submit' marginLeft='5em'  display='block' backgroundColor='rgb(110, 197, 76)' buttonText = 'Add Task' /> :                    
+                        <Link to ="/timer" onClick={this.addTitleandTexttoLocalStorage} >
+                            <Button type = 'submit' marginLeft='4.7em'display='block' backgroundColor='rgb(110, 197, 76)' buttonText = "Begin" 
                             
                 
                         />

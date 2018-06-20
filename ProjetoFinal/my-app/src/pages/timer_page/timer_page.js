@@ -1,28 +1,29 @@
 import React from 'react'
 import Timer from '../../components/timer/finalcomposition_timer/timer'
 import ShowTask from '../../components/showTask/showTask';
+import Title from '../../components/title/title.js'
+import { Link } from 'react-router-dom'
+import './timer_page.css'
+
 
 class TimerPage extends React.Component {
     state = {
         tasksList: JSON.parse(localStorage.getItem('tasks')) || []
     }
+        
     render () {
-        const tasks = JSON.parse(localStorage.getItem('tasks')) || []
-        const key = JSON.parse(localStorage.getItem('key')) || []
-        console.log (JSON.parse(localStorage.getItem('tasks')))
-        console.log (tasks[1].title)
-        console.log (key)
-        let newTasks = tasks.filter( (value) => {
-            return value !== key
-        }
-
-        )
-        console.log ('newTask', newTasks)
-        // }
-        return (
+    
+      
+       return (
             <div>
-                <ShowTask setTitleafterStart = {this.setTitleafterStart} setTextafterStart = {this.setText}/>
+                <Title textContent = 'Let´s get to work!'/> 
+                <ShowTask setTitleafterStart = {JSON.parse(localStorage.getItem('title'))} setTextafterStart = {JSON.parse(localStorage.getItem('text'))} />
                 <Timer />
+                <Link to='/tasklist'>
+                    <i class="fas fa-arrow-left"></i>
+                </Link>
+                    
+                
             </div>
         )
     }

@@ -54,7 +54,7 @@ class TaskList extends React.Component {
      }
      filterTaskforTimer = (idSelectedTask) => {
         const tasks = JSON.parse(localStorage.getItem('tasks'))
-        const selectedTask = tasks.filter (
+        const selectedTask = tasks.filterIndex (
             (id) => {
                 return (
                     id === idSelectedTask

@@ -1,0 +1,107 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; 
+} */
+#intro {
+    background: url("./clock.jpg");
+    opacity: 0.7;
+    background-size: 320px 419px, cover;
+    background-position: top left, bottom center;
+    background-repeat: no-repeat;
+    height: 405px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.content {
+    position: relative;
+}
+header {
+    margin-bottom: 1em;
+    position: absolute;
+    top:235%;                         
+    transform: translate(0, -275%);
+}
+.headerParagraph {
+position: relative;
+top: 349%;
+width: 270px;
+left: 7%;
+transform: translate(0, 352%);
+color: #d7d3cd;
+}
+.far {
+position: relative;
+top: 349%;
+left: 7%;
+transform: translate(-22px, 303%);
+color: #d7d3cd;
+font-size: 77px;
+
+}
+.main {
+    padding: 4em 15px 4em 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.main.style1 h2 {
+    font-size: 3em;
+    line-height: 1em;
+    letter-spacing: -0.05em;
+    font-weight: 900;
+    color: rgb #bfb6b6;
+
+}
+.aboutPomodoro {
+    background-color: rgb(77, 73, 73);
+    padding: 10px;
+}
+.textAboutPomodoro{
+    color: rgb(196, 184, 184);
+}
+#one {
+    background: url("./taskAgenda.jpg");
+    opacity: 0.7;
+    background-size: 320px 483px, cover;
+    background-position: top left, bottom center;
+    background-repeat: no-repeat;
+    height: 476px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#two {
+    background: url("./organizedBooks.jpg");
+    opacity: 0.7;
+    background-size: 320px 483px, cover;
+    background-position: top left, bottom center;
+    background-repeat: no-repeat;
+    height: 476px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.howCanWeHelp {
+    background-color: rgb(77, 73, 73);
+    padding: 10px;
+}
+.texthowCanWeHelp{
+    color: rgb(196, 184, 184);
+}
+.buttonLandingPage {
+    width: 150px;
+    color: rgb(221, 213, 213);
+    margin-top: 3em;
+    background-color: #36853d;
+    border-style: none;
+    border-radius: 10px;
+    padding: 9px;
+    height: 3em;
+    font-weight: bold;
+}
+

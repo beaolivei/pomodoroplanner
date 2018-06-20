@@ -1,4 +1,5 @@
 import React from 'react'
+import './showTask.css'
 
 class ShowTask extends React.Component {
    constructor(props){
@@ -13,8 +14,8 @@ class ShowTask extends React.Component {
 
     render(){
         return (
-        <form>
-            <p> {this.props.setTitleafterStart} </p>
+        <form className='showTaskForm'>
+            <p className='paragraphStyle'> {this.props.setTitleafterStart} </p>
             <p> {this.props.setTextafterStart} </p>
         </form>
         )
