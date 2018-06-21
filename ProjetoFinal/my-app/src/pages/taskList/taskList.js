@@ -4,6 +4,7 @@ import Title from '../../components/title/title.js'
 import './taskList.css'
 
 
+
 class TaskList extends React.Component {
         state = {
         tasksList: JSON.parse(localStorage.getItem('tasks')) || [],
@@ -65,10 +66,13 @@ class TaskList extends React.Component {
         console.log('novo Local Storage', localStorage.getItem('tasks'))
 
      }
+
     render() {
+        let namefromLocalStorage = localStorage.getItem('name')
+        console.log(namefromLocalStorage)
         return (
             <div className = 'home'>
-                <Title textContent = "Hello, user"/>
+                <Title textContent = {"Hello, "+ JSON.parse(namefromLocalStorage)+'!'}/>
                 <p> Here you can add your daily tasks, when you click on start button your timer will start </p>
                 <Tasks addTask={this.addNewTask}/>
                 <h2 className='subtitle'> Task list </h2>

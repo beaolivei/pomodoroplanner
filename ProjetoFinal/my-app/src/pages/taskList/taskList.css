@@ -2,6 +2,9 @@
     font-size: 0.5  em;
 }
 .home {
-    background-color: rgb(219, 91, 91);
+    background-color: rgb(214, 200, 200);
     padding: 12px;
+}
+.home p{
+    font-size: 13px
 }

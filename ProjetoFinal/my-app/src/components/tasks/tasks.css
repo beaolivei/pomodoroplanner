@@ -1,16 +1,23 @@
 .formStyle {
-    font-size: 1rem;
+    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     width: 88%;
-    padding: 1rem;
+    padding: 0.5rem;
     margin-left: 1em;
     background: #ECDDF3;
     border-radius: 2px;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14);
     color:rgb(87, 84, 84);
     border-radius: 6px;
+}
+@media (min-width: 1160px){
+    .formStyle{
+        width: 50%;
+        margin-left: 14em;
+    }
+
 }
 .closeButtonStyle {
         cursor: pointer;
@@ -29,6 +36,8 @@
 ::placeholder {
     color:rgb(87, 84, 84);
     opacity: 1; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
 }
 .textAreaStyle {
     display: block;
@@ -37,6 +46,11 @@
     padding: 10px;
     /* margin-bottom: 5px; */
     border-radius: 8px;
+}
+textarea::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 14px;
+    padding: 12px 20px;
 }
 .taskButton {
     display: flex;
@@ -47,5 +61,21 @@
 }
 .buttonS {
     justify-content: center;
+    margin: auto
+}
+input::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 14px;
+    padding: 12px 20px;
+}
+input:focus {
+    background-color: lightblue;
+}
+textarea:focus {
+    background-color: lightblue;
 }
 
+.greenButton {
+    font-style: none;
+
+}

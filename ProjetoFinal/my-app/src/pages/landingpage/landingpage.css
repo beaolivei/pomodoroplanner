@@ -7,8 +7,8 @@
     vertical-align: baseline; 
 } */
 #intro {
-    background: url("./clock.jpg");
-    opacity: 0.7;
+    background: url("./time_management_tips.jpg");
+    opacity: 0.6;
     background-size: 320px 419px, cover;
     background-position: top left, bottom center;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@
 header {
     margin-bottom: 1em;
     position: absolute;
-    top:235%;                         
+    top: 153%;                        
     transform: translate(0, -275%);
 }
 .headerParagraph {
@@ -32,16 +32,20 @@ top: 349%;
 width: 270px;
 left: 7%;
 transform: translate(0, 352%);
-color: #d7d3cd;
+color: #131210;
 }
-.far {
+.fa-arrow-alt-circle-down {
 position: relative;
 top: 349%;
 left: 7%;
 transform: translate(-22px, 303%);
-color: #d7d3cd;
+color: #131210;
 font-size: 77px;
 
+}
+.fa-arrow-circle-down {
+    margin-right:0;
+    color: black;
 }
 .main {
     padding: 4em 15px 4em 15px;
@@ -50,38 +54,45 @@ font-size: 77px;
     text-align: center;
 }
 .main.style1 h2 {
-    font-size: 3em;
+    font-size: 2em;
     line-height: 1em;
     letter-spacing: -0.05em;
     font-weight: 900;
-    color: rgb #bfb6b6;
+    color: rgb #131210;
 
 }
 .aboutPomodoro {
     background-color: rgb(77, 73, 73);
     padding: 10px;
+    height: 252px;
 }
 .textAboutPomodoro{
     color: rgb(196, 184, 184);
 }
 #one {
-    background: url("./taskAgenda.jpg");
+    background: url("./tomato.jpg");
     opacity: 0.7;
-    background-size: 320px 483px, cover;
+    background-size: 320px 502px, cover;
     background-position: top left, bottom center;
     background-repeat: no-repeat;
-    height: 476px;
+    height: 503px;
     margin: 0;
     padding: 0;
     border: 0;
 }
+.fa-arrow-down{
+    margin-left: 3em;
+    font-size: 36px;
+    margin-top: 1em;
+    color: black;
+}
 #two {
-    background: url("./organizedBooks.jpg");
+    background: url("./getOrganized.jpeg");
     opacity: 0.7;
-    background-size: 320px 483px, cover;
+    background-size: 320px 511px, cover;
     background-position: top left, bottom center;
     background-repeat: no-repeat;
-    height: 476px;
+    height: 500px;
     margin: 0;
     padding: 0;
     border: 0;

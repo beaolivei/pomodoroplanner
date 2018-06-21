@@ -1,5 +1,4 @@
 import React from 'react'
-import {ic_close} from 'react-icons-kit/md/ic_close'
 import Button from '../button/button'
 import { Route, Switch, Redirect, Link } from 'react-router-dom'
 import TimerPage from '../../pages/timer_page/timer_page'
@@ -93,18 +92,18 @@ class Tasks extends React.Component {
                     {this.state.id && <button className='closeButtonStyle'
                     type="button"
                     onClick={this.handleRemoveButtonOnClick}>
-                        <ic_close />
+                        <i class="fas fa-window-close"></i>
                     </button>}
                     <input className='inputStyle' name = 'title' value = {this.state.title} placeholder ='Add Title ...' onChange ={this.handleChange}/>
                     <textarea className='textAreaStyle' name='text' value = {this.state.text} placeholder ='Add some extra info, maybe?' onChange = {this.handleChange}/>
                     <div className='buttonS'>
-                        {!this.state.id ?
-                        <Button type = 'submit' marginLeft='5em'  display='block' backgroundColor='rgb(110, 197, 76)' buttonText = 'Add Task' /> :                    
+                        {!this.state.id ? <a>
+                        <Button type = 'submit'  display='block' backgroundColor='rgb(110, 197, 76)' buttonText = 'Add Task' /> </a> :                    
                         <Link to ="/timer" onClick={this.addTitleandTexttoLocalStorage} >
-                            <Button type = 'submit' marginLeft='4.7em'display='block' backgroundColor='rgb(110, 197, 76)' buttonText = "Begin" 
+                            <a className="greenButton"><Button type ='submit'  display='block' backgroundColor='rgb(110, 197, 76)' buttonText = "Begin" 
                             
                 
-                        />
+                        /></a>
                         </Link>}
                         {this.state.id && <Button  type='button' backgroundColor='rgb(122, 118, 110)' buttonText= 'Edit Task' onClick = {this.editButtonClick}/>
                         }

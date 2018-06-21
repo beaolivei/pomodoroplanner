@@ -20,7 +20,7 @@ class TimerPage extends React.Component {
                 <ShowTask setTitleafterStart = {JSON.parse(localStorage.getItem('title'))} setTextafterStart = {JSON.parse(localStorage.getItem('text'))} />
                 <Timer />
                 <Link to='/tasklist'>
-                    <i class="fas fa-arrow-left"></i>
+                    <i class="fas fa-angle-double-left"></i>
                 </Link>
                     
                 
