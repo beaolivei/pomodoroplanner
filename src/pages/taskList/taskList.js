@@ -24,7 +24,7 @@ const WelcomeBox = styled.div `
         background-color: #8ffcffb8;
         padding: 5% 30% 3% 29%;
         @media (max-width: 600px){
-            padding: 0 0 0 0;
+            padding: 0;
         }
 
 `
@@ -34,6 +34,10 @@ const ReturnArrowImage = styled.img `
         margin: 0 0 0 2%;
     }
     
+`
+const GoToMyTasksButton = styled.button `
+    background-color: #0200ff;
+
 `
 const PageTitle = styled.h1 `
     font-family: montserrat;
@@ -63,6 +67,9 @@ const TaskListBox = styled.div `
     display: block; 
     padding: 5% 30% 0 30%;
     background-color: #8ffcff;
+    @media (max-width: 600px){
+        padding: 0;
+    }
 `
 const TaskListTitle = styled.h2 `
     font-family: montserrat;
@@ -156,7 +163,7 @@ class TaskList extends React.Component {
                         <Tasks addTask={this.addNewTask}/>
                     </WelcomeBox> :
                     <div>
-                        <TaskListBox> 
+                        <TaskListBox id="Task"> 
                             <ButtonForIcons onClick = {this.goBackToWelcomeBox}>
                                 <ReturnArrowImage src ={require ('./leftArrow.png')}/>
                             </ButtonForIcons>

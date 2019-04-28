@@ -9,6 +9,12 @@ const TimerSection = styled.section `
     background-size: cover;
     background-position: 850px 37%;
     padding: 5% 12%;
+    @media (max-width: 600px) {
+        height: 1200px;
+        width: 200%;
+        padding: 28% 0;
+        }
+    }
 `
 const ReturnArrowImage = styled.img `
     margin: 3% 0 0 0%;
@@ -21,6 +27,10 @@ const TimerBox = styled.div `
     border-radius: 56%;
     padding: 15% 34%;
     background-color: #0900ff7a;
+    @media (max-width: 600px) {
+    border-radius: 0;
+    padding: 10%;
+    }
 `
 const PageTitle = styled.h1 `
     font-family: montserrat;
@@ -36,6 +46,9 @@ const Paragraph = styled.p `
     text-align: center;
     font-size: 20px;
     line-height: 250%;
+    @media (max-width: 600px){
+        color: #8ffcff;
+    }
 `
 const TimerWrapper = styled.div `
     width: 500px;
@@ -77,32 +90,31 @@ class MyTimer extends React.Component {
       }
 
       componentDidMount() {
-            () => 
-            this.timerID = setInterval(
+            setInterval(
             () => this.tickminutes(),
-            60000); 
+            60000),
             setInterval( 
-            () => this.tickseconds(), 1000) 
-            }
-        
-            
-        
+            () => this.tickseconds(), 1000);
+             }
     
-      componentWillUnmount() {
-        clearInterval(this.timerID);
-        this.state.minutes === 0 && 
-        <Redirect to='/congrats'/>
-      }
+    
+     componentWillUnmount() {}
+
     
       tickminutes() {
-        var myminutes = this.state.minutes
+        var myminutes = this.state.minutes;
+        {myminutes > 0 ?
         this.setState({
           minutes: myminutes - 1,
-        });
-      }
+        }) : 
+        this.setState({
+            minutes: 0,
+          }) 
+      };
+    }
       tickseconds() {
           var myseconds = this.state.seconds
-          { myseconds > 0 ? 
+           { myseconds > 0 ? 
           this.setState({
               seconds : myseconds - 1,
               widthValue: this.state.widthValue - 0.07,
@@ -124,7 +136,6 @@ class MyTimer extends React.Component {
     }
       render() {
         var widthValue = this.state.widthValue;
-        console.log('stopTimerState', this.state.stopTimer)
 
         return (
           <TimerSection>
